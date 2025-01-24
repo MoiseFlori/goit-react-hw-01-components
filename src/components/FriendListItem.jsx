@@ -20,7 +20,7 @@ const Status = styled.span.withConfig({
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-center: center;
+  justify-content: center;
   width: 14px;
   height: 14px;
   margin-left: 12px;
@@ -35,6 +35,7 @@ height: 40px;
 
 const Name = styled.p`
  font-size: 18px;
+ 
 `;
 
 const FriendListItem = ({ avatar, name, isOnline }) => {

@@ -6,24 +6,24 @@ import './TransactionHistory.css'
 const TransactionHistory = ({ items }) => {
   return (
     <table className="transaction-history">
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Amount</th>
-      <th>Currency</th>
-    </tr>
-  </thead>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Currency</th>
+        </tr>
+      </thead>
 
-  <tbody>
-     {items.map(({ id, type, amount, currency }) => (
+      <tbody>
+        {items.map(({ id, type, amount, currency }) => (
           <tr key={id}>
             <td>{type}</td>
             <td>{amount}</td>
             <td>{currency}</td>
           </tr>
-        ))};
-  </tbody>
-</table>
+        ))}
+      </tbody>
+    </table>
   );
   
 };
@@ -33,7 +33,7 @@ TransactionHistory.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       type: PropTypes.string.isRequired,
-      amount: PropTypes.number.isRequired,
+     amount: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
       currency: PropTypes.string.isRequired,
     })
   ).isRequired,
